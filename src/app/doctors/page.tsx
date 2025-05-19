@@ -1,7 +1,7 @@
-import { DoctorFilter } from "@/src/components/doctor-filter";
-import DoctorList from "@/src/components/doctor-list";
+import { DoctorFilter } from "@/components/doctor-filter";
+import DoctorList from "@/components/doctor-list";
 import { Suspense } from "react";
-import { Skeleton } from "@/src/components/ui/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function DoctorsPage() {
   return (

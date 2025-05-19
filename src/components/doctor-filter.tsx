@@ -1,20 +1,18 @@
 "use client";
 
-import type React from "react";
-
-import { useState } from "react";
-import { Button } from "@/src/components/ui/button";
-import { Input } from "@/src/components/ui/input";
-import { Label } from "@/src/components/ui/label";
-import { Slider } from "@/src/components/ui/slider";
-import { Checkbox } from "@/src/components/ui/checkbox";
-import {@/src/components/ui/accordion
+import { ChangeEvent, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
+import { Checkbox } from "@/components/ui/checkbox";
+import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { useDoctorsStore } from "@/src/store/doctors-store";
+import { useDoctorsStore } from "@/store/doctors-store";
 
 export function DoctorFilter() {
   const { filters, updateFilters } = useDoctorsStore();
@@ -81,7 +79,7 @@ export function DoctorFilter() {
     });
   };
 
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     updateFilters({ ...filters, search: e.target.value });
   };
 

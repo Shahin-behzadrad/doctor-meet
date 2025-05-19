@@ -1,13 +1,8 @@
-import { Card, CardContent } from "@/src/components/ui/card";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/src/components/ui/tabs";
-import { Badge } from "@/src/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
 import { Star, Clock, Video, MapPin, CalendarIcon } from "lucide-react";
-import BookingForm from "@/src/components/booking-form";
+import BookingForm from "@/components/booking-form";
 
 export default function DoctorProfilePage({
   params,

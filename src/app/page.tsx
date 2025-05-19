@@ -1,8 +1,11 @@
-import { Button } from "@/src/components/ui/button";
-import { Card, CardContent } from "@/src/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
-import FeaturedDoctors from "@/src/components/featured-doctors";
+import FeaturedDoctors from "@/components/featured-doctors";
 import { CalendarClock, Video, Users } from "lucide-react";
+
+import heroImage from "../../public/hero-image.webp";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -22,17 +25,15 @@ export default function Home() {
               <Button asChild size="lg">
                 <Link href="/doctors">Find Doctors</Link>
               </Button>
-              <Button variant="outline" size="lg">
-                <Link href="/how-it-works">How It Works</Link>
-              </Button>
             </div>
           </div>
           <div className="relative h-64 md:h-96 rounded-lg overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-cyan-500 opacity-20 rounded-lg"></div>
-            <img
-              src="/placeholder.svg?height=400&width=600"
+            <Image
+              src={heroImage.src}
               alt="Doctor with patient in video call"
-              className="w-full h-full object-cover rounded-lg"
+              className="object-cover rounded-lg"
+              fill
             />
           </div>
         </div>

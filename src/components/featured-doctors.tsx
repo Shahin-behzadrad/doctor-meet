@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Card, CardContent, CardFooter } from "@/src/components/ui/card";
-import { Button } from "@/src/components/ui/button";
-import { Badge } from "@/src/components/ui/badge";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Star, Clock } from "lucide-react";
 import Link from "next/link";
-import { useDoctorsStore } from "@/src/store/doctors-store";
+import { useDoctorsStore } from "@/store/doctors-store";
 
 export default function FeaturedDoctors() {
   const { doctors, fetchFeaturedDoctors } = useDoctorsStore();

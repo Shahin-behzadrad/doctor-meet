@@ -1,12 +1,10 @@
 "use client";
 
-import type React from "react";
-
-import { useState } from "react";
-import { Button } from "@/src/components/ui/button";
-import { Input } from "@/src/components/ui/input";
-import { Label } from "@/src/components/ui/label";
-import {@/src/components/ui/card
+import { FormEvent, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
   Card,
   CardContent,
   CardDescription,
@@ -14,7 +12,7 @@ import {@/src/components/ui/card
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useUserStore } from "@/src/store/user-store";
+import { useUserStore } from "@/store/user-store";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -28,7 +26,7 @@ export default function SignupPage() {
   const { signup, isLoading } = useUserStore();
   const router = useRouter();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError("");
 

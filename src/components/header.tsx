@@ -1,20 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "@/src/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X, User, Calendar, LogOut } from "lucide-react";
-import { useUserStore } from "@/src/store/user-store";
+import { useUserStore } from "@/store/user-store";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/src/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback } from "@/src/components/ui/avatar";
-import { ModeToggle } from "@/src/components/mode-toggle";
+} from "@/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Header() {
   const pathname = usePathname();
@@ -24,7 +24,6 @@ export default function Header() {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Doctors", href: "/doctors" },
-    { label: "How It Works", href: "/how-it-works" },
   ];
 
   return (
@@ -33,7 +32,7 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="text-xl font-bold text-teal-500">
-              MedConnect
+              DoctorMeet
             </Link>
 
             <nav className="hidden md:flex ml-10 space-x-6">

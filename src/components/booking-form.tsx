@@ -1,17 +1,15 @@
 "use client";
 
-import type React from "react";
-
-import { useState } from "react";
-import { Button } from "@/src/components/ui/button";
-import { Calendar } from "@/src/components/ui/calendar";
-import { RadioGroup, RadioGroupItem } from "@/src/components/ui/radio-group";
-import { Label } from "@/src/components/ui/label";
-import { Textarea } from "@/src/components/ui/textarea";
-import { useToast } from "@/src/hooks/use-toast";
+import { FormEvent, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
-import { useAppointmentStore } from "@/src/store/appointment-store";
-import { useUserStore } from "@/src/store/user-store";
+import { useAppointmentStore } from "@/store/appointment-store";
+import { useUserStore } from "@/store/user-store";
 
 export default function BookingForm({ doctorId }: { doctorId: string }) {
   const [date, setDate] = useState<Date | undefined>(undefined);
@@ -35,7 +33,7 @@ export default function BookingForm({ doctorId }: { doctorId: string }) {
     "04:00 PM",
   ];
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
     if (!isAuthenticated) {

@@ -1,11 +1,9 @@
 "use client";
 
-import type React from "react";
-
-import { useState } from "react";
-import { Button } from "@/src/components/ui/button";
-import { Input } from "@/src/components/ui/input";
-import { Label } from "@/src/components/ui/label";
+import { FormEvent, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Card,
   CardContent,
@@ -13,8 +11,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/src/components/ui/card";
-import { useUserStore } from "@/src/store/user-store";
+} from "@/components/ui/card";
+import { useUserStore } from "@/store/user-store";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
@@ -26,7 +24,7 @@ export default function LoginPage() {
   const searchParams = useSearchParams();
   const redirect = searchParams.get("redirect") || "/";
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     await login(email, password);
     router.push(redirect);
